@@ -2,11 +2,11 @@
 
 Rainmeter skin like conky
 
-# Notes
+## Notes
 
 CoreTemp is needed to show CPU temperature.
 
-# Screenshot
+## Screenshot
 
 <img src='./screenshot.png' height='800'>
 
