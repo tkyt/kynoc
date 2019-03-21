@@ -398,8 +398,9 @@ Y=0r
 Font=#Font#
 FontSize=#FontSize#
 FontColor=#FontColor#
-NumOfDecimals=1
-Text=%1%
+NumOfDecimals=0
+Text=%1B
+AutoScale=1
 AntiAlias=1
 
 [Disk1ReadLabelUnderline]
@@ -418,6 +419,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk1ReadGrpahLine]
 Meter=Line
@@ -427,6 +429,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk1WriteGraphFill]
 Meter=Histogram
@@ -437,6 +440,7 @@ X=#x0#
 Y=#GraphHeight#r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk1WriteGrpahLine]
 Meter=Line
@@ -447,6 +451,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk1WriteLabelUnderline]
 Meter=IMAGE
@@ -476,8 +481,9 @@ Y=0r
 Font=#Font#
 FontSize=#FontSize#
 FontColor=#FontColor#
-NumOfDecimals=1
-Text=%1%
+NumOfDecimals=0
+Text=%1B
+AutoScale=1
 AntiAlias=1
 
 [SeparatorDisk1]
@@ -550,9 +556,10 @@ Y=0r
 Font=#Font#
 FontSize=#FontSize#
 FontColor=#FontColor#
-NumOfDecimals=1
-Text=%1%
+NumOfDecimals=0
+Text=%1B
 AntiAlias=1
+AutoScale=1
 
 [Disk2ReadLabelUnderline]
 Meter=IMAGE
@@ -570,6 +577,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk2ReadGrpahLine]
 Meter=Line
@@ -579,6 +587,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk2WriteGraphFill]
 Meter=Histogram
@@ -589,6 +598,7 @@ X=#x0#
 Y=#GraphHeight#r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk2WriteGrpahLine]
 Meter=Line
@@ -599,6 +609,7 @@ X=#x0#
 Y=0r
 W=#dx#
 H=#GraphHeight#
+AutoScale=1
 
 [Disk2WriteLabelUnderline]
 Meter=IMAGE
@@ -628,9 +639,10 @@ Y=0r
 Font=#Font#
 FontSize=#FontSize#
 FontColor=#FontColor#
-NumOfDecimals=1
-Text=%1%
+NumOfDecimals=0
+Text=%1B
 AntiAlias=1
+AutoScale=1
 
 [SeparatorDisk2]
 Meter=IMAGE

@@ -80,31 +80,45 @@ Measure=Calc
 Formula=MeasureDisk1Free/MeasureDisk1Total*100
 UpdateDivider=#DiskUsageInterval#
 
+; [MeasureDisk1ReadRaw]
+; Measure=Plugin
+; Plugin=PerfMon
+; PerfMonObject=LogicalDisk
+; PerfMonCounter=% Disk Read Time
+; PerfMonInstance=#Disk1#:
+
 [MeasureDisk1ReadRaw]
 Measure=Plugin
-Plugin=PerfMon
-PerfMonObject=LogicalDisk
-PerfMonCounter=% Disk Read Time
-PerfMonInstance=#Disk1#:
+Plugin=UsageMonitor
+Category=LogicalDisk
+Counter=Disk Read bytes/sec
+Name=#Disk1#:
+DynamicVariables=1
 
 [MeasureDisk1Read]
 Measure=calc
-Formula=(MeasureDisk1ReadRaw)*1e-5
-MinValue=0
-MaxValue=100
+Formula=(MeasureDisk1ReadRaw)*1.
+DynamicVariables=1
+
+; [MeasureDisk1WriteRaw]
+; Measure=Plugin
+; Plugin=PerfMon
+; PerfMonObject=LogicalDisk
+; PerfMonCounter=% Disk Write Time
+; PerfMonInstance=#Disk1#:
 
 [MeasureDisk1WriteRaw]
 Measure=Plugin
-Plugin=PerfMon
-PerfMonObject=LogicalDisk
-PerfMonCounter=% Disk Write Time
-PerfMonInstance=#Disk1#:
+Plugin=UsageMonitor
+Category=LogicalDisk
+Counter=Disk Write bytes/sec
+Name=#Disk1#:
+DynamicVariables=1
 
 [MeasureDisk1Write]
 Measure=calc
-Formula=(MeasureDisk1WriteRaw)*1e-5
-MinValue=0
-MaxValue=100
+Formula=(MeasureDisk1WriteRaw)*1.
+DynamicVariables=1
 
 ;===================================
 ; Disk 2 (D drive)
@@ -143,44 +157,42 @@ Measure=Calc
 Formula=MeasureDisk2Free/MeasureDisk2Total*100
 UpdateDivider=#DiskUsageInterval#
 
-;[MeasureUsed2]
-;Measure=FreeDiskSpace
-;Drive=#disk2#:
-;IfEqualValue="0:"
-;IfEqualAction=[!ToggleMeter "Disk 2 Free"] [!ToggleMeter "Disk 2 Label"] [!ToggleMeter "Disk 2 Bar"][!MoveMeter 5 376 "Battery Bar"] [!SetOption Background H 413] [!Redraw]
-;UpdateDivider=#DiskUsageInterval#
+[MeasureUsed2]
+Measure=FreeDiskSpace
+Drive=#disk2#:
+IfEqualValue="0:"
+IfEqualAction=[!ToggleMeter "Disk 2 Free"] [!ToggleMeter "Disk 2 Label"] [!ToggleMeter "Disk 2 Bar"][!MoveMeter 5 376 "Battery Bar"] [!SetOption Background H 413] [!Redraw]
+UpdateDivider=#DiskUsageInterval#
 
-;[MeasureUsed2bar]
-;Measure=FreeDiskSpace
-;Drive=#disk2#:
-;UpdateDivider=#DiskUsageInterval#
-;InvertMeasure=1
+[MeasureUsed2bar]
+Measure=FreeDiskSpace
+Drive=#disk2#:
+UpdateDivider=#DiskUsageInterval#
+InvertMeasure=1
 
 [MeasureDisk2ReadRaw]
 Measure=Plugin
-Plugin=PerfMon
-PerfMonObject=LogicalDisk
-PerfMonCounter=% Disk Read Time
-PerfMonInstance=#Disk2#:
+Plugin=UsageMonitor
+Category=LogicalDisk
+Counter=Disk Read bytes/sec
+Name=#Disk2#:
 
 [MeasureDisk2Read]
 Measure=calc
-Formula=(MeasureDisk2ReadRaw)*1e-5
-MinValue=0
-MaxValue=100
+Formula=(MeasureDisk2ReadRaw)*1.
+DynamicVariables=1
 
 [MeasureDisk2WriteRaw]
 Measure=Plugin
-Plugin=PerfMon
-PerfMonObject=LogicalDisk
-PerfMonCounter=% Disk Write Time
-PerfMonInstance=#Disk2#:
+Plugin=UsageMonitor
+Category=LogicalDisk
+Counter=Disk Write bytes/sec
+Name=#Disk2#:
 
 [MeasureDisk2Write]
 Measure=calc
-Formula=(MeasureDisk2WriteRaw)*1e-5
-MinValue=0
-MaxValue=100
+Formula=(MeasureDisk2WriteRaw)*1.
+DynamicVariables=1
 
 ;===================================
 ; Network upload
